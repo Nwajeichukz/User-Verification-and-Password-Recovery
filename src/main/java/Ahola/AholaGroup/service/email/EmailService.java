@@ -5,26 +5,18 @@ import Ahola.AholaGroup.dto.EmailDto;
 import Ahola.AholaGroup.exception.ApiException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.MailException;
+
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
-import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
-
-@Service
+@Component
 @RequiredArgsConstructor
 @Slf4j
 public class EmailService implements EmailServiceImpl {
 
     private final JavaMailSender javaMailSender;
-
-//    @Value("${spring.mail.username}")
-//    private String senderEmail;
 
     @Override
     public void sendEmailAlert(EmailDto emailDto) {

@@ -48,17 +48,16 @@ public class AuthenticationService implements AuthenticationServiceImpl {
 
         admin.setRoles(create_Role());
 
-        Admin userSaved = adminRepo.save(admin);
-
-
-//        send email alert
+//      send email alert
         EmailDto emailDto = EmailDto.builder()
-                .recipient(userSaved.getEmail())
+                .recipient(request.getEmail())
                 .subject("ACCOUNT CREATION")
                 .messageBody("Congratulation " + request.getUsername() + " your Account has been created")
                 .build();
 
         emailService.sendEmailAlert(emailDto);
+
+        adminRepo.save(admin);
 
         return new AppResponse<>(0, "Admin successfully created", Map.of(
                 "id", admin.getId(),
