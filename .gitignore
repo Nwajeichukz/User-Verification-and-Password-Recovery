@@ -4,9 +4,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-#src/main/resources/application-local.properties
-
-resources/
 
 ### STS ###
 .apt_generated
@@ -17,6 +14,7 @@ resources/
 .springBeans
 .sts4-cache
 
+.env
 
 ### IntelliJ IDEA ###
 .idea

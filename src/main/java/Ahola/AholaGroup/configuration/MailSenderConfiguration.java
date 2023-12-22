@@ -18,11 +18,14 @@ public class MailSenderConfiguration {
     @Value("${spring.mail.password}")
     private String password;
 
+    @Value("${spring.mail.host}")
+    private String host;
+
     @Bean
     public JavaMailSender javaMailSender(){
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
-        mailSender.setHost("smtp.elasticemail.com");
+        mailSender.setHost(host);
         mailSender.setPort(2525);
         mailSender.setUsername(username);
         mailSender.setPassword(password);
