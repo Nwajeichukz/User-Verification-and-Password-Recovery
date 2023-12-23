@@ -15,13 +15,14 @@ target/
 .sts4-cache
 
 
-.env
-
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+
+.env
+
 
 ### NetBeans ###
 /nbproject/private/
